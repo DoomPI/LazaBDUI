@@ -17,6 +17,7 @@ java {
 dependencies {
 	useCommonLibraries()
 
+	useModule(ProjectModules.Feature.auth)
 	useModule(ProjectModules.Feature.product)
 }
 

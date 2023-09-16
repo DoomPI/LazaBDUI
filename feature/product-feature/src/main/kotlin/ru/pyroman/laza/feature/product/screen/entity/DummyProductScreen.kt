@@ -4,11 +4,12 @@ import divkit.dsl.*
 import divkit.dsl.scope.DivScope
 import ru.pyroman.laza.feature.product.screen.ProductScreenConstants
 import ru.pyroman.laza.screen.Screen
+import ru.pyroman.laza.screen.ScreenData
 
 class DummyProductScreen : Screen {
 
-    override fun getDivan(): Divan {
-        return divan {
+    override fun getData(): ScreenData {
+        val divan = divan {
             data(
                 logId = ProductScreenConstants.PRODUCT_SCREEN_LAYOUT_ID,
                 states = singleRoot(
@@ -47,6 +48,10 @@ class DummyProductScreen : Screen {
                 )
             )
         }
+
+        return ScreenData(
+            divan = divan,
+        )
     }
 
     private fun DivScope.productImage() = image(
