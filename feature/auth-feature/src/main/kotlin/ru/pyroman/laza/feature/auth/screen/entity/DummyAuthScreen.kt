@@ -3,6 +3,7 @@ package ru.pyroman.laza.feature.auth.screen.entity
 import divkit.dsl.*
 import divkit.dsl.scope.DivScope
 import ru.pyroman.laza.feature.auth.screen.AuthScreenConstants
+import ru.pyroman.laza.feature.bottombutton.view.bottomButton
 import ru.pyroman.laza.screen.Screen
 import ru.pyroman.laza.screen.ScreenData
 
@@ -72,7 +73,7 @@ class DummyAuthScreen : Screen {
                                 )
                             ),
                             bottomButton(
-                                text = AuthScreenConstants.CREATE_AN_ACCOUNT
+                                title = AuthScreenConstants.CREATE_AN_ACCOUNT
                             ),
                         ),
                     )
@@ -84,7 +85,6 @@ class DummyAuthScreen : Screen {
             divan = divan,
         )
     }
-
     private fun DivScope.authMethodsContainer(
 
     ) = container(
@@ -191,38 +191,5 @@ class DummyAuthScreen : Screen {
                 ),
             )
         )
-    )
-
-    private fun DivScope.bottomButton(
-        text: String,
-    ) = container(
-        width = matchParentSize(),
-        height = wrapContentSize(),
-        orientation = horizontal,
-        background = listOf(solidBackground(color("#9775fa"))),
-        contentAlignmentHorizontal = center,
-        contentAlignmentVertical = top,
-        alignmentHorizontal = center,
-        alignmentVertical = bottom,
-        paddings = edgeInsets(
-            top = 15,
-            left = 10,
-            right = 10,
-            bottom = 40,
-        ),
-        items = listOf(
-            text(
-                text = text,
-                width = wrapContentSize(),
-                height = wrapContentSize(),
-                fontSize = 17,
-                fontWeight = bold,
-                lineHeight = 19,
-                letterSpacing = 0.0,
-                textColor = color("#fefefe"),
-                textAlignmentHorizontal = center,
-                textAlignmentVertical = center,
-            )
-        ),
     )
 }

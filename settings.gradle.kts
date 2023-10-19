@@ -2,6 +2,7 @@ rootProject.name = "LazaBDUI"
 
 include(":common:screen")
 include(":feature:auth-feature")
+include(":feature:bottom-button-feature")
 include(":feature:home-feature")
 include(":feature:product-feature")
 
